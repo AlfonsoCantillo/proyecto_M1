@@ -5,21 +5,11 @@
 	$accion= isset($_POST['accion']) ? $_POST['accion'] : false;
 	
 	if ($accion and $accion='AGREGAR_CARRO') {
-		session_start();
-		//$pedido = [$codigo,$cantidad];
-		//$pedido = json_encode($pedido);				
+		session_start();						
 		$claseDatos  = new stdClass();
 		$claseDatos->codigo  = $codigo;
 		$claseDatos->cantidad  = $cantidad;		
 		if (isset($_SESSION['carrito'])) {
-			/*$dat = explode('|',$_SESSION['carrito']);
-			foreach ($dat as $value) {
-				$pedido = json_decode($value);
-				if ($pedido->codigo == $codigo) {
-					// code...
-				}
-				echo $pedido->codigo;
-			}*/
 			$_SESSION['carrito'] = $_SESSION['carrito'].'|'.json_encode($claseDatos);
 			$_SESSION['item'] += $cantidad;
 		}else{
@@ -54,8 +44,6 @@
 	  }
 	  $sql->close();
 		$mysqli->close();
-		//$claseGeneral	  = new stdClass();
-		//$claseGeneral->data = $datos;
 		return $datos;
 	}
 ?>
