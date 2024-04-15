@@ -70,7 +70,6 @@
               </div>
           </div>
       </header>
-      
       <!-- Product section-->
       <section class="py-1">
         <?php 
@@ -83,7 +82,7 @@
                   <div class="small mb-1">SKU: <?php echo $producto->codigo; ?></div>
                   <h1 class="display-5 fw-bolder"><?php echo $producto->nombre; ?></h1>
                   <div class="fs-5 mb-2">
-                    <span class="text-decoration-line-through">$45.00</span>
+                    <!--span class="text-decoration-line-through">$45.00</span-->
                     <span><?php echo '$ '.number_format($producto->precio,0); ?></span>
                   </div>
                   <p class="lead"><?php echo $producto->descripcion; ?></p>
